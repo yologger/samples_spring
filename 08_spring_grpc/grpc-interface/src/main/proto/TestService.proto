@@ -1,0 +1,17 @@
+syntax = "proto3";
+
+option java_multiple_files = true;
+option java_package = "com.yologger.grpc.service";
+
+service TestService {
+  rpc doTest (TestRequest) returns (TestReply) {
+  }
+}
+
+message TestRequest {
+  string data = 1;
+}
+
+message TestReply {
+  string message = 1;
+}
