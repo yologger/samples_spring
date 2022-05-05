@@ -5,19 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="b74bfc40-bf10-4ed2-87e2-5b6a20f548d6" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/../../06_spring_redis/src/main/java/com/yologger/spring_redis/RedisConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../06_spring_redis/src/main/java/com/yologger/spring_redis/TestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../07_spring_mongodb/src/main/java/com/yologger/spring_mongodb/TestController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../07_spring_mongodb/src/main/java/com/yologger/spring_mongodb/base/BaseDocument.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../07_spring_mongodb/src/main/java/com/yologger/spring_mongodb/config/MongoConfig.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../07_spring_mongodb/src/main/java/com/yologger/spring_mongodb/data/MemberDocument.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../07_spring_mongodb/src/main/java/com/yologger/spring_mongodb/data/MemberRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/../../07_spring_mongodb/src/test/java/com/yologger/spring_mongodb/data/MemberRepositoryTest.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/gradlew.bat" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/../../05_spring_docker" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/gradle.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/gradle.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -46,7 +35,7 @@
     "ASKED_ADD_EXTERNAL_FILES": "true",
     "ASKED_SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "/Users/hyukjung/Desktop",
+    "last_opened_file_path": "/Users/hyukjung/Desktop/workspace/01_spring/01_samples/08_spring_grpc/grpc-interface",
     "nodejs_package_manager_path": "npm",
     "settings.editor.selected.configurable": "MTConfigurable"
   }
@@ -65,6 +54,7 @@
       <option name="presentableId" value="Default" />
       <updated>1651579454758</updated>
       <workItem from="1651579460129" duration="326000" />
+      <workItem from="1651581911476" duration="670000" />
     </task>
     <servers />
   </component>
