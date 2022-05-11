@@ -21,6 +21,41 @@ public class MemberEntity {
     public MemberEntity() {
     }
 
+    @PostLoad
+    public void onPostLoad() {
+
+    }
+
+    @PrePersist
+    public void onPrePersist() {
+
+    }
+
+    @PostPersist
+    public void onPostPersist() {
+
+    }
+
+    @PreUpdate
+    public void onPreUpdate() {
+
+    }
+
+    @PostUpdate
+    public void onPostUpdate() {
+
+    }
+
+    @PreRemove
+    public void onPreRemove() {
+
+    }
+
+    @PostRemove
+    public void onPostRemove() {
+
+    }
+
     public MemberEntity(String email) {
         this.email = email;
     }

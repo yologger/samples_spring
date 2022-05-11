@@ -1,9 +1,12 @@
 package com.yologger.spring_mongodb.data;
 
-import org.bson.types.ObjectId;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
+import org.springframework.data.mongodb.core.MongoTemplate;
+import org.springframework.test.annotation.Commit;
+
+import java.util.List;
 
 import static com.google.common.truth.Truth.assertThat;
 
@@ -33,6 +36,8 @@ class MemberRepositoryTest {
 
         memberRepository.save(member1);
         memberRepository.save(member2);
+
+        List<MemberDocument> members = memberRepository.findAll();
 
         assertThat(memberRepository.count()).isEqualTo(2);
     }
