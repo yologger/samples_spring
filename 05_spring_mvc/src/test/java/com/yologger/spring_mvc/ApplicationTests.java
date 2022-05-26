@@ -2,20 +2,39 @@ package com.yologger.spring_mvc;
 
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.boot.test.autoconfigure.web.servlet.AutoConfigureMockMvc;
-import org.springframework.boot.test.autoconfigure.web.servlet.WebMvcTest;
 import org.springframework.boot.test.context.SpringBootTest;
 import org.springframework.boot.test.web.client.TestRestTemplate;
 import org.springframework.boot.web.server.LocalServerPort;
-import org.springframework.http.ResponseEntity;
-import org.springframework.test.web.servlet.MockMvc;
-import org.springframework.test.web.servlet.request.MockMvcRequestBuilders;
+import org.springframework.http.*;
+
+import java.net.URI;
 
 import static com.google.common.truth.Truth.assertThat;
-import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.content;
-import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 
-@SpringBootTest
+@SpringBootTest(webEnvironment = SpringBootTest.WebEnvironment.RANDOM_PORT)
 class ApplicationTests {
+
+    @Autowired
+    TestRestTemplate template;
+
+    @LocalServerPort
+    private int port;
+
+    @Test
+    public void test() {
+        RequestDTO body = new RequestDTO("Paul", 35);
+
+        HttpHeaders headers= new HttpHeaders();
+        headers.add("Accept", MediaType.APPLICATION_JSON_VALUE);
+        headers.add("Content-type", MediaType.APPLICATION_JSON_VALUE);
+
+        URI url = URI.create("http://localhost:" + port + "/test/test1");
+
+        RequestEntity<RequestDTO> request = new RequestEntity(body, headers, HttpMethod.POST, url);
+
+        ResponseEntity<ResponseDTO> response = template.exchange(request, ResponseDTO.class);
+
+        assertThat(response.getBody().getName()).isEqualTo("Paul");
+        assertThat(response.getBody().getAge()).isEqualTo(34);
+    }
 }

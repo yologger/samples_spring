@@ -4,9 +4,6 @@ import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.test.annotation.Commit;
-
-import java.util.List;
 
 import static com.google.common.truth.Truth.assertThat;
 
@@ -14,31 +11,33 @@ import static com.google.common.truth.Truth.assertThat;
 class MemberRepositoryTest {
 
     @Autowired
-    private MemberRepository memberRepository;
+    private MongoTemplate mongoTemplate;
 
     @Test
-    void test() {
-        MemberDocument member1 = MemberDocument.builder()
-                .email("Paul@gmai.com")
-                .name("Paul")
-                .age(25)
-                .isMarried(true)
-                .weight(170.3)
+    public void test() {
+
+        MemberDocument member = MemberDocument.builder()
+                .email("Son@gmai.com")
+                .password("1234")
                 .build();
 
-        MemberDocument member2 = MemberDocument.builder()
-                .email("Monica@gmai.com")
-                .name("Monica")
-                .age(33)
-                .isMarried(false)
-                .weight(150.8)
+        PostDocument post1 = PostDocument.builder()
+                .title("title1")
+                .content("content1")
                 .build();
 
-        memberRepository.save(member1);
-        memberRepository.save(member2);
+        member.addPost(post1);
 
-        List<MemberDocument> members = memberRepository.findAll();
+        PostDocument post2 = PostDocument.builder()
+                .title("title2")
+                .content("content2")
+                .build();
 
-        assertThat(memberRepository.count()).isEqualTo(2);
+        member.addPost(post1);
+
+        mongoTemplate.insert(member, "member");
+
+        assertThat(mongoTemplate.findAll(MemberDocument.class, "member").size()).isEqualTo(1);
     }
+
 }
