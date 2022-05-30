@@ -18,9 +18,13 @@ public class App {
         try {
             transaction.begin();
 
-            MemberEntity member = entityManager.find(MemberEntity.class, 1L);
-            Map<String, PostEntity> posts = member.getPosts();
-            PostEntity post = posts.get(1L);
+            MemberEntity member = new MemberEntity("Paul", "1234");
+
+            PostEntity post = new PostEntity("content1");
+            post.setWriter(member);
+
+            // 부모 엔티티만 영속화
+            entityManager.persist(member);
 
             transaction.commit();
         } catch (Exception e) {

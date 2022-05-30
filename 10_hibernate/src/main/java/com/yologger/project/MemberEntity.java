@@ -8,63 +8,44 @@ import java.util.*;
 public class MemberEntity {
 
     @Id
-    @Column
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
     @Column
-    private String email;
+    private String name;
 
-    @OneToMany(mappedBy = "writer", fetch = FetchType.LAZY)
-    private Map<String, PostEntity> posts = new HashMap();
+    @Column
+    private String password;
+
+    @OneToMany(mappedBy = "writer", cascade = CascadeType.PERSIST)
+    private List<PostEntity> posts = new ArrayList<>();
+
+    public MemberEntity(String name, String password) {
+        this.name = name;
+        this.password = password;
+    }
 
     public MemberEntity() {
-    }
-
-    @PostLoad
-    public void onPostLoad() {
 
     }
 
-    @PrePersist
-    public void onPrePersist() {
-
+    public void addPost(PostEntity post) {
+        this.posts.add(post);
     }
 
-    @PostPersist
-    public void onPostPersist() {
-
+    public Long getId() {
+        return id;
     }
 
-    @PreUpdate
-    public void onPreUpdate() {
-
+    public String getName() {
+        return name;
     }
 
-    @PostUpdate
-    public void onPostUpdate() {
-
+    public String getPassword() {
+        return password;
     }
 
-    @PreRemove
-    public void onPreRemove() {
-
-    }
-
-    @PostRemove
-    public void onPostRemove() {
-
-    }
-
-    public MemberEntity(String email) {
-        this.email = email;
-    }
-
-    public void setEmail(String email) {
-        this.email = email;
-    }
-
-    public Map<String, PostEntity> getPosts() {
-        return this.posts;
+    public List<PostEntity> getPosts() {
+        return posts;
     }
 }

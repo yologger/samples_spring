@@ -28,7 +28,8 @@ public class MemberEntity {
     private List<PostEntity> posts = new ArrayList<PostEntity>();
 
     @Builder
-    public MemberEntity(String email, String password) {
+    public MemberEntity(Long id, String email, String password) {
+        this.id = id;
         this.email = email;
         this.password = password;
     }
