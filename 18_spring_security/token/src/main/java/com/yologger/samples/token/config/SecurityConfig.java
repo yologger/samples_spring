@@ -49,7 +49,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 authorize.antMatchers(HttpMethod.GET, "/user/registration").permitAll();
                 authorize.antMatchers(HttpMethod.POST, "/user/registration").permitAll();
                 authorize.antMatchers(HttpMethod.POST, "/auth/login").permitAll();
-                authorize.antMatchers(HttpMethod.GET, "test/test1").permitAll();
                 authorize.anyRequest().authenticated();
             });
     }
@@ -63,7 +62,6 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
     JwtFilter jwtFilter() {
         return new JwtFilter(tokenProvider);
     }
-
 
     @Override
     protected void configure(AuthenticationManagerBuilder auth) throws Exception {

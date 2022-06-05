@@ -6,7 +6,9 @@ import com.yologger.security.session.repository.UserEntity;
 import com.yologger.security.session.repository.UserRepository;
 import lombok.RequiredArgsConstructor;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.security.core.Authentication;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 import org.springframework.stereotype.Service;
 
 @Service
@@ -24,6 +26,8 @@ public class UserService {
                 .authority(AuthorityType.USER)
                 .password(passwordEncoder.encode(request.getPassword()))
                 .build();
+
+
 
         UserEntity saved = userRepository.save(user);
         return saved.getId();
