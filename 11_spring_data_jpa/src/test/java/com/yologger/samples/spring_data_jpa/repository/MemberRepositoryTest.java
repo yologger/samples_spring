@@ -5,19 +5,47 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest;
 import org.springframework.test.context.jdbc.Sql;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
+import javax.transaction.Transactional;
 import java.util.List;
 
 import static com.google.common.truth.Truth.assertThat;
 
 @DataJpaTest
-@Sql(scripts = {"classpath:data/dummy.sql"})
 class MemberRepositoryTest {
-    @Autowired MemberRepository memberRepository;
+
+    @PersistenceContext
+    EntityManager entityManager;
 
     @Test
+    @Transactional
     public void test() {
-        List<MemberEntity> members = memberRepository.findAll();
-        assertThat(members.size()).isEqualTo(3);
+        MemberEntity member = MemberEntity.builder()
+                .email("james@gmail.com")
+                .password("1234")
+                .build();
+
+        entityManager.persist(member);
+
+        PostEntity post1 = PostEntity.builder()
+                .writer(member)
+                .content("content1")
+                .build();
+
+        entityManager.persist(post1);
+
+        PostEntity post2 = PostEntity.builder()
+                .writer(member)
+                .content("content2")
+                .build();
+
+        entityManager.persist(post2);
+
+        entityManager.flush();
+
+        List<PostEntity> posts = entityManager.createQuery("SELECT p FROM PostEntity p JOIN FETCH p.writer w", PostEntity.class)
+                .getResultList();
     }
 }
 

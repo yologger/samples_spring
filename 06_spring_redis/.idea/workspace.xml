@@ -1,0 +1,266 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="AutoImportSettings">
+    <option name="autoReloadType" value="SELECTIVE" />
+  </component>
+  <component name="ChangeListManager">
+    <list default="true" id="6901d5ba-8dd7-4d03-aedd-3018c1eb0a4f" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/../00_java/.gradle/7.1/executionHistory/executionHistory.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../00_java/.gradle/7.1/executionHistory/executionHistory.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../00_java/.gradle/7.1/executionHistory/executionHistory.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../00_java/.gradle/7.1/executionHistory/executionHistory.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../00_java/.gradle/7.1/fileHashes/fileHashes.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../00_java/.gradle/7.1/fileHashes/fileHashes.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../00_java/.gradle/7.1/fileHashes/fileHashes.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../00_java/.gradle/7.1/fileHashes/fileHashes.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../00_java/.gradle/buildOutputCleanup/buildOutputCleanup.lock" beforeDir="false" afterPath="$PROJECT_DIR$/../00_java/.gradle/buildOutputCleanup/buildOutputCleanup.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../00_java/build/classes/java/main/com/yologger/app/App.class" beforeDir="false" afterPath="$PROJECT_DIR$/../00_java/build/classes/java/main/com/yologger/app/App.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../00_java/build/tmp/compileJava/previous-compilation-data.bin" beforeDir="false" afterPath="$PROJECT_DIR$/../00_java/build/tmp/compileJava/previous-compilation-data.bin" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../00_java/src/main/java/com/yologger/app/App.java" beforeDir="false" afterPath="$PROJECT_DIR$/../00_java/src/main/java/com/yologger/app/App.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../05_spring_mvc/src/main/java/com/yologger/spring_mvc/config/MyConfig.java" beforeDir="false" afterPath="$PROJECT_DIR$/../05_spring_mvc/src/main/java/com/yologger/spring_mvc/config/MyConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yologger/spring_redis/Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yologger/spring_redis/RedisConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yologger/spring_redis/TestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yologger/spring_redis/repository/Person.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/java/com/yologger/spring_redis/repository/PersonRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/src/test/java/com/yologger/spring_redis/SpringRedisApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/session/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/session/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/session/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/session/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/session/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/session/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/session/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/session/src/main/java/com/yologger/security/session/Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/session/src/main/java/com/yologger/security/session/config/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/session/src/main/java/com/yologger/security/session/controller/MainController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/session/src/main/java/com/yologger/security/session/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/session/src/main/java/com/yologger/security/session/model/RegistrationDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/session/src/main/java/com/yologger/security/session/repository/AuthorityType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/session/src/main/java/com/yologger/security/session/repository/UserEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/session/src/main/java/com/yologger/security/session/repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/session/src/main/java/com/yologger/security/session/service/UserDetailsServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/session/src/main/java/com/yologger/security/session/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/session/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/session/src/main/resources/templates/home.mustache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/session/src/main/resources/templates/registration.mustache" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/session/src/test/java/com/yologger/security/session/ApplicationTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/session/src/test/java/com/yologger/security/session/repository/UserRepositoryTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/token/.gitignore" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/token/build.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/token/gradle/wrapper/gradle-wrapper.jar" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/token/gradle/wrapper/gradle-wrapper.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/token/gradlew" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/token/gradlew.bat" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/token/settings.gradle" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/token/src/main/java/com/yologger/samples/token/Application.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/token/src/main/java/com/yologger/samples/token/config/SecurityConfig.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/token/src/main/java/com/yologger/samples/token/controller/AuthController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/token/src/main/java/com/yologger/samples/token/controller/TestController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/token/src/main/java/com/yologger/samples/token/controller/UserController.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/token/src/main/java/com/yologger/samples/token/model/LoginRequestDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/token/src/main/java/com/yologger/samples/token/model/LoginResponseDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/token/src/main/java/com/yologger/samples/token/model/RegisterRequestDto.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/token/src/main/java/com/yologger/samples/token/repository/AuthorityType.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/token/src/main/java/com/yologger/samples/token/repository/UserEntity.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/token/src/main/java/com/yologger/samples/token/repository/UserRepository.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/token/src/main/java/com/yologger/samples/token/service/UserDetailsServiceImpl.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/token/src/main/java/com/yologger/samples/token/service/UserService.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/token/src/main/java/com/yologger/samples/token/util/JwtAccessDeniedHandler.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/token/src/main/java/com/yologger/samples/token/util/JwtAuthenticationEntryPoint.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/token/src/main/java/com/yologger/samples/token/util/JwtFilter.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/token/src/main/java/com/yologger/samples/token/util/TokenProvider.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/token/src/main/resources/application.properties" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/token/src/test/java/com/yologger/samples/token/ApplicationTests.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../18_spring_security/token/src/test/java/com/yologger/samples/token/util/TokenProviderTest.java" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../23_swagger/src/main/java/com/yologger/samples/swagger/config/Swagger2Config.java" beforeDir="false" afterPath="$PROJECT_DIR$/../23_swagger/src/main/java/com/yologger/samples/swagger/config/SwaggerConfig.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../23_swagger/src/main/java/com/yologger/samples/swagger/controller/PostController.java" beforeDir="false" afterPath="$PROJECT_DIR$/../23_swagger/src/main/java/com/yologger/samples/swagger/controller/PostController.java" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="ExternalProjectsData">
+    <projectState path="$PROJECT_DIR$">
+      <ProjectState />
+    </projectState>
+  </component>
+  <component name="FileTemplateManagerImpl">
+    <option name="RECENT_TEMPLATES">
+      <list>
+        <option value="Kotlin Class" />
+        <option value="Class" />
+      </list>
+    </option>
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/.." />
+  </component>
+  <component name="MarkdownSettingsMigration">
+    <option name="stateVersion" value="1" />
+  </component>
+  <component name="ProjectId" id="27p9eehnRZQEPEBdFKPRh4l1cSk" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RequestMappingsPanelOrder0": "0",
+    "RequestMappingsPanelOrder1": "1",
+    "RequestMappingsPanelWidth0": "75",
+    "RequestMappingsPanelWidth1": "75",
+    "WebServerToolWindowFactoryState": "false",
+    "last_opened_file_path": "/Users/hyukjung/Desktop/workspace/01_spring/01_samples/06_spring_redis",
+    "spring.configuration.checksum": "25fdf5de0208e7ae78b4483de461b88b"
+  }
+}]]></component>
+  <component name="ReactorSettings">
+    <option name="notificationShown" value="true" />
+  </component>
+  <component name="RunManager" selected="Spring Boot.SpringRedisApplication">
+    <configuration name="SpringRedisApplicationTests" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.yologger.spring_redis.SpringRedisApplicationTests&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="SpringRedisApplicationTests.test1" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.yologger.spring_redis.SpringRedisApplicationTests.test1&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="SpringRedisApplicationTests.test2 (1)" type="GradleRunConfiguration" factoryName="Gradle" temporary="true">
+      <ExternalSystemSettings>
+        <option name="executionName" />
+        <option name="externalProjectPath" value="$PROJECT_DIR$" />
+        <option name="externalSystemIdString" value="GRADLE" />
+        <option name="scriptParameters" value="" />
+        <option name="taskDescriptions">
+          <list />
+        </option>
+        <option name="taskNames">
+          <list>
+            <option value=":test" />
+            <option value="--tests" />
+            <option value="&quot;com.yologger.spring_redis.SpringRedisApplicationTests.test2&quot;" />
+          </list>
+        </option>
+        <option name="vmOptions" />
+      </ExternalSystemSettings>
+      <ExternalSystemDebugServerProcess>false</ExternalSystemDebugServerProcess>
+      <ExternalSystemReattachDebugProcess>true</ExternalSystemReattachDebugProcess>
+      <DebugAllEnabled>false</DebugAllEnabled>
+      <method v="2" />
+    </configuration>
+    <configuration name="SpringRedisApplication" type="SpringBootApplicationConfigurationType" factoryName="Spring Boot">
+      <module name="spring_redis.main" />
+      <option name="SPRING_BOOT_MAIN_CLASS" value="com.yologger.spring_redis.Application" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <recent_temporary>
+      <list>
+        <item itemvalue="Gradle.SpringRedisApplicationTests.test2 (1)" />
+        <item itemvalue="Gradle.SpringRedisApplicationTests.test1" />
+        <item itemvalue="Gradle.SpringRedisApplicationTests" />
+      </list>
+    </recent_temporary>
+  </component>
+  <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="6901d5ba-8dd7-4d03-aedd-3018c1eb0a4f" name="Changes" comment="" />
+      <created>1650006256816</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1650006256816</updated>
+      <workItem from="1650006258514" duration="1693000" />
+      <workItem from="1652059115145" duration="7611000" />
+      <workItem from="1652681570839" duration="838000" />
+      <workItem from="1654741473082" duration="787000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="3" />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/yologger/spring_redis/SpringRedisApplicationTests.java</url>
+          <line>34</line>
+          <option name="timeStamp" value="5" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/src/test/java/com/yologger/spring_redis/SpringRedisApplicationTests.java</url>
+          <line>54</line>
+          <option name="timeStamp" value="7" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/src/test/java/com/yologger/spring_redis/SpringRedisApplicationTests.java</url>
+          <line>25</line>
+          <properties class="com.yologger.spring_redis.SpringRedisApplicationTests" method="test1">
+            <option name="EMULATED" value="true" />
+            <option name="WATCH_EXIT" value="false" />
+          </properties>
+          <option name="timeStamp" value="6" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
+</project>

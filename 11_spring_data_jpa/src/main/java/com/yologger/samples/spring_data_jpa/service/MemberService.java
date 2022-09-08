@@ -8,12 +8,17 @@ import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
+import javax.persistence.EntityManager;
+import javax.persistence.PersistenceContext;
 import javax.transaction.Transactional;
 
 @Service
 @RequiredArgsConstructor
 public class MemberService {
     private final MemberRepository memberRepository;
+
+    @PersistenceContext
+    private final EntityManager entityManager;
 
     @Transactional
     public ResponseEntity<Long> join(JoinRequest request) {
@@ -23,6 +28,7 @@ public class MemberService {
                 .build();
 
         MemberEntity saved = memberRepository.save(member);
+
         return new ResponseEntity(saved.getId(), HttpStatus.CREATED);
     }
 }

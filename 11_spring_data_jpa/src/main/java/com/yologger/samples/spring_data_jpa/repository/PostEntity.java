@@ -25,7 +25,8 @@ public class PostEntity {
     private MemberEntity writer;
 
     @Builder
-    public PostEntity(String content) {
+    public PostEntity(String content, MemberEntity writer) {
         this.content = content;
+        this.writer = writer;
     }
 }

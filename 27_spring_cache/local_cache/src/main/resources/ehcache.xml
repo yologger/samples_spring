@@ -1,0 +1,26 @@
+<config
+        xmlns:xsi='http://www.w3.org/2001/XMLSchema-instance'
+        xmlns='http://www.ehcache.org/v3'
+        xsi:schemaLocation="http://www.ehcache.org/v3 http://www.ehcache.org/schema/ehcache-core.xsd">
+
+    <cache alias="memberCache">
+        <key-type>java.lang.Long</key-type>
+        <value-type>com.yologger.local_cache.service.MemberDTO</value-type>
+        <expiry>
+            <ttl unit="seconds">30</ttl> <!-- ttl에는 캐시 만료 시간을 지정하며 unit에는 단위를 지정한다. 해당 요소는 30초 뒤 캐시가 만료되는 것으로 지정되어 있다. -->
+            <!-- unit은 days, hours, minutes, seconds, millis, micros, nanos 를 세팅할 수 있다. -->
+        </expiry>
+        <listeners>
+            <listener>
+                <class>com.yologger.local_cache.cache.MemberCacheEventLogger</class>
+                <event-firing-mode>ASYNCHRONOUS</event-firing-mode>
+                <event-ordering-mode>UNORDERED</event-ordering-mode>
+                <events-to-fire-on>CREATED</events-to-fire-on>
+                <events-to-fire-on>EXPIRED</events-to-fire-on>
+            </listener>
+        </listeners>
+        <resources>
+            <heap unit="entries">2000</heap>  <!-- 최대 2000개의 Entry를 저장할 수 있다. 2000개가 넘어가면 가장 오래된 엔트리를 삭제한다.-->
+        </resources>
+    </cache>
+</config>

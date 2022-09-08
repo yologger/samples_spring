@@ -10,15 +10,6 @@ import org.springframework.web.bind.annotation.*;
 public class PostController {
 
     @GetMapping("/post/{post_id}")
-    @ApiImplicitParams({
-        @ApiImplicitParam(
-            name = "post_id",
-            value = "사용자 아이디",
-            required = true,
-            dataType = "Long",  // 기본 타입 | 클래스 이름
-            paramType = "path", // path | query | body | header | form
-            defaultValue = "0")
-    })
     public Post getPost(
             // @ApiParam(value = "작성자 아이디", required = true)
             @PathVariable("post_id") Long postId
