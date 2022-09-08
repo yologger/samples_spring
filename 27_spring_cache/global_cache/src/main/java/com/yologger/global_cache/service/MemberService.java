@@ -1,9 +1,11 @@
-package com.yologger.local_cache.service;
+package com.yologger.global_cache.service;
 
-import com.yologger.local_cache.repository.MemberEntity;
-import com.yologger.local_cache.repository.MemberRepository;
+import com.yologger.global_cache.repository.MemberEntity;
+import com.yologger.global_cache.repository.MemberRepository;
 import lombok.RequiredArgsConstructor;
-import org.springframework.cache.annotation.*;
+import org.springframework.cache.annotation.CacheEvict;
+import org.springframework.cache.annotation.CachePut;
+import org.springframework.cache.annotation.Cacheable;
 import org.springframework.stereotype.Service;
 
 import javax.transaction.Transactional;
@@ -28,21 +30,22 @@ public class MemberService {
                 .collect(Collectors.toList());
     }
 
-    @Cacheable(value = "memberCache", key = "#id")
+    @Cacheable(value = "memberCache", key = "#id", cacheManager = "redisCacheManager")
     public MemberDTO findMemberById(Long id) {
         return memberRepository.findMemberById(id).orElseThrow(() -> new NullPointerException("No member")).toDTO();
     }
 
-    @CacheEvict(value = "memberCache", key = "#id")
+    @CacheEvict(value = "memberCache", key = "#id", cacheManager = "redisCacheManager")
     public void deleteMemberById(Long id) {
         memberRepository.deleteById(id);
     }
 
     @Transactional
-    @CachePut(value = "memberCache", key = "#id")
+    @CachePut(value = "memberCache", key = "#id", cacheManager = "redisCacheManager")
     public MemberDTO updatePassword(Long id, String password) {
         MemberEntity member = memberRepository.findMemberById(id).orElseThrow(() -> new NullPointerException("No member"));
         member.setPassword(password);
         return member.toDTO();
     }
 }
+
