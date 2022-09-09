@@ -19,7 +19,7 @@ public class CacheConfig {
     public CacheManager redisCacheManager(RedisConnectionFactory redisConnectionFactory) {
         RedisCacheManager.RedisCacheManagerBuilder builder = RedisCacheManager.RedisCacheManagerBuilder.fromConnectionFactory(redisConnectionFactory);
         RedisCacheConfiguration configuration = RedisCacheConfiguration.defaultCacheConfig()
-                .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(new GenericJackson2JsonRedisSerializer())).prefixCacheNameWith("member:") // Key Prefix로 "member:"를 앞에 붙여 저장
+                .serializeValuesWith(RedisSerializationContext.SerializationPair.fromSerializer(new GenericJackson2JsonRedisSerializer())).prefixCacheNameWith("app:") // Key Prefix로 "app:"를 앞에 붙여 저장
                 .entryTtl(Duration.ofMinutes(30)); // 캐시 수명 30분
         builder.cacheDefaults(configuration);
         return builder.build();
