@@ -14,8 +14,6 @@ class MemberRepositoryTest {
 
     @Autowired lateinit var memberRepository: MemberRepository
 
-    @Autowired lateinit var databaseClient: DatabaseClient
-
     @Test
     @DisplayName("데이터 저장 테스트")
     fun save() {
