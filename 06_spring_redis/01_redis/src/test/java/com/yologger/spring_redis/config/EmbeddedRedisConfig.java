@@ -1,31 +1,48 @@
-package com.yologger.spring_redis;
+package com.yologger.spring_redis.config;
 
 import org.springframework.beans.factory.annotation.Value;
+import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.data.redis.connection.RedisConnectionFactory;
 import org.springframework.data.redis.connection.RedisStandaloneConfiguration;
 import org.springframework.data.redis.connection.lettuce.LettuceConnectionFactory;
 import org.springframework.data.redis.core.RedisTemplate;
-import org.springframework.data.redis.repository.configuration.EnableRedisRepositories;
 import org.springframework.data.redis.serializer.StringRedisSerializer;
-import org.springframework.session.data.redis.config.annotation.web.http.EnableRedisHttpSession;
+import redis.embedded.RedisServer;
 
-@Configuration
-@EnableRedisHttpSession
-public class RedisConfig {
+import javax.annotation.PostConstruct;
+import javax.annotation.PreDestroy;
+import java.io.IOException;
+
+@TestConfiguration
+public class EmbeddedRedisConfig {
 
     @Value("${spring.redis.host}")
-    private String host;
+    private String redisHost;
 
     @Value("${spring.redis.port}")
-    private int port;
+    private int redisPort;
+
+    private RedisServer redisServer;
+
+    @PostConstruct
+    public void redisServer() throws IOException {
+        redisServer = new RedisServer(redisPort);
+        redisServer.start();
+    }
+
+    @PreDestroy
+    public void stopRedis() {
+        if (redisServer != null) {
+            redisServer.stop();
+        }
+    }
 
     @Bean
     public RedisConnectionFactory redisConnectionFactory() {
         RedisStandaloneConfiguration configuration = new RedisStandaloneConfiguration();
-        configuration.setHostName(host);
-        configuration.setPort(port);
+        configuration.setHostName(redisHost);
+        configuration.setPort(redisPort);
         return new LettuceConnectionFactory(configuration);
     }
 

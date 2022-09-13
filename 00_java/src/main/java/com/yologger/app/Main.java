@@ -1,115 +1,92 @@
 package com.yologger.app;
 
-import java.util.*;
+import java.util.ArrayList;
+import java.util.Arrays;
+import java.util.Collections;
+import java.util.HashMap;
 
 public class Main {
     public static void main(String[] args) {
-        Solution solution = new Solution();
-        int n = 6;
-        int[][] input = {
-                {0, 1, 1},
-                {0, 2, 3},
-                {1, 0, 1},
-                {1, 3, 2},
-                {1, 5, 9},
-                {2, 0, 3},
-                {2, 3, 7},
-                {2, 4, 8},
-                {3, 1, 2},
-                {3, 2, 7},
-                {3, 4, 1},
-                {3, 5, 2},
-                {4, 2, 8},
-                {4, 3, 1},
-                {4, 5, 15},
-                {5, 1, 9},
-                {5, 3, 2},
-                {5, 4, 15}
-        };
+        ArrayList<String> vertices = new ArrayList<String>(Arrays.asList("A", "B", "C", "D", "E", "F"));
+        ArrayList<Edge> edges = new ArrayList<Edge>();
+        edges.add(new Edge("A", "B", 4));
+        edges.add(new Edge("A", "C", 3));
+        edges.add(new Edge("B", "D", 5));
+        edges.add(new Edge("B", "F", 9));
+        edges.add(new Edge("C", "D", 2));
+        edges.add(new Edge("C", "E", 6));
+        edges.add(new Edge("D", "E", 1));
+        edges.add(new Edge("D", "F", 8));
+        edges.add(new Edge("E", "F", 15));
 
-        solution.solution(n, input);
+        Solution solution = new Solution();
+        ArrayList<Edge> MST = solution.kruskal(vertices, edges);
+        System.out.println(MST);
     }
 }
 
 class Solution {
 
-    public void solution(int n, int[][] input) {
-        Map<Integer, ArrayList<Edge>> graph = new HashMap<>();
+    HashMap<String, String> parent = new HashMap<String, String>();
 
-        // 그래프 초기화
-        for (int i=0; i<input.length; i++) {
-            ArrayList<Edge> adjacentVertices = graph.get(input[i][0]);
-            if (adjacentVertices == null) {
-                adjacentVertices = new ArrayList<Edge>();
-                adjacentVertices.add(new Edge(input[i][1], input[i][2]));
-                graph.put(input[i][0], adjacentVertices);
-            } else {
-                adjacentVertices.add(new Edge(input[i][1], input[i][2]));
+    public ArrayList<Edge> kruskal(ArrayList<String> vertices, ArrayList<Edge> edges) {
+        ArrayList<Edge> MST = new ArrayList<Edge>();
+
+        // MakeSet
+        for (String vertex: vertices) parent.put(vertex, vertex);
+
+        // Weight를 기준으로 정렬
+        Collections.sort(edges);
+
+        for (int i=0; i<edges.size(); i++) {
+            Edge cursorEdge = edges.get(i);
+
+            // 싸이클이 없을 때만 Union
+            if (find(cursorEdge.vertexU) != find(cursorEdge.vertexV)) {
+                union(cursorEdge.vertexU, cursorEdge.vertexV);
+                MST.add(cursorEdge);
             }
         }
 
-        System.out.println(dijkstra(graph, 0));  // {0=0, 1=1, 2=3, 3=3, 4=4, 5=5}
-        System.out.println(dijkstra(graph, 1));  // {0=1, 1=0, 2=4, 3=2, 4=3, 5=4}
-        System.out.println(dijkstra(graph, 2));  // {0=3, 1=4, 2=0, 3=6, 4=7, 5=8}
-        System.out.println(dijkstra(graph, 3));  // {0=3, 1=2, 2=6, 3=0, 4=1, 5=2}
-        System.out.println(dijkstra(graph, 4));  // {0=4, 1=3, 2=7, 3=1, 4=0, 5=3}
-        System.out.println(dijkstra(graph, 5));  // {0=5, 1=4, 2=8, 3=2, 4=3, 5=0}
+        return MST;
     }
 
-    public Map<Integer, Integer> dijkstra(Map<Integer, ArrayList<Edge>> graph, int start) {
-
-        // 거리 저장 배열 생성
-        Map<Integer, Integer> distance = new HashMap<>();
-
-        // 거리 저장 배열 무한대로 초기화
-        for (Integer key : graph.keySet()) distance.put(key, Integer.MAX_VALUE);
-
-        // 시작 노드 초기화
-        distance.put(start, 0);
-
-        // 우선순위 큐에 시작 노드 추가
-        PriorityQueue<Edge> priorityQueue = new PriorityQueue<>();
-        priorityQueue.add(new Edge(start, 0));
-
-        while(priorityQueue.size() > 0) {
-            Edge minEdge = priorityQueue.remove();
-            int minWeight = minEdge.weight;
-            int minVertex = minEdge.vertex;
-
-            if (distance.get(minVertex) < minWeight) continue;
-
-            ArrayList<Edge> adjacentEdges = graph.get(minVertex);
-            for (Edge edge: adjacentEdges) {
-                int adjacentVertex = edge.vertex;
-                int adjacentWeight = edge.weight;
-                if (minWeight + adjacentWeight < distance.get(adjacentVertex)) {
-                    distance.put(adjacentVertex, minWeight + adjacentWeight);
-                    priorityQueue.add(new Edge(adjacentVertex, minWeight + adjacentWeight));
-                }
-            }
-        }
-
-        return distance;
+    // 두 그래프를 합집합
+    public void union(String u, String v) {
+        String uParent = find(u);
+        String vParent = find(v);
+        if (uParent.compareTo(vParent) > 0) parent.put(u, v);
+        else parent.put(v, u);
     }
+
+    // 부모 정점 반환
+    public String find(String vertex) {
+        // 재귀 사용
+        if (parent.get(vertex) != vertex) parent.put(vertex, find(parent.get(vertex)));
+        return parent.get(vertex);
+    }
+
 }
 
 class Edge implements Comparable<Edge> {
 
-    Integer vertex;
-    Integer weight;
+    String vertexU;
+    String vertexV;
+    int weight;
 
-    public Edge(Integer vertex, Integer weight) {
-        this.vertex = vertex;
+    public Edge(String vertexU, String vertexV, int weight) {
+        this.vertexU = vertexU;
+        this.vertexV = vertexV;
         this.weight = weight;
+    }
+
+    @Override
+    public String toString() {
+        return "{" + vertexU + ", " + vertexV + ", " + weight + "}";
     }
 
     @Override
     public int compareTo(Edge edge) {
         return this.weight - edge.weight;
-    }
-
-    @Override
-    public String toString() {
-        return "{" + vertex + ", " + weight + "}";
     }
 }

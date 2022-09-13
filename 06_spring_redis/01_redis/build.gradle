@@ -19,14 +19,30 @@ repositories {
 }
 
 dependencies {
-    testImplementation "com.google.truth:truth:1.1.3"
-    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
-    implementation 'org.springframework.session:spring-session-data-redis'
-    implementation 'org.springframework.boot:spring-boot-starter-web'
-    compileOnly 'org.projectlombok:lombok'
+    // DevTools
     developmentOnly 'org.springframework.boot:spring-boot-devtools'
-    annotationProcessor 'org.projectlombok:lombok'
+
+    // Spring MVC
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
+    // Spring Data Redis
+    implementation 'org.springframework.boot:spring-boot-starter-data-redis'
+
+    // Spring Session Redis
+    implementation 'org.springframework.session:spring-session-data-redis'
+
+    // Spring Test
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
+
+    // Lombok
+    compileOnly 'org.projectlombok:lombok'
+    annotationProcessor 'org.projectlombok:lombok'
+
+    // Truth
+    testImplementation "com.google.truth:truth:1.1.3"
+
+    // Embedded Redis
+    testImplementation "it.ozimov:embedded-redis:0.7.2"
 }
 
 tasks.named('test') {
