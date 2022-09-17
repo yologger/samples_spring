@@ -1,0 +1,22 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: springboot-deployment
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: springboot-app-label
+  template:
+    metadata:
+      name: 
+      labels: 
+        app: springboot-app-label
+    spec:
+      containers:
+      - name: springboot-app
+        image: 056671487005.dkr.ecr.ap-northeast-2.amazonaws.com/my_project:0.0
+        ports:
+        - containerPort: 8080
+      imagePullSecrets:
+      - name: regcred

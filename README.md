@@ -1,1 +1,26 @@
-# Samples of spring project.
+# Spring 샘플 프로젝트
+Spring 관련 샘플 프로젝트입니다.
+- `01_servlet_jsp`: Servlet, JSP 샘플 프로젝트
+- `02_spring_core`: Spring IoC Container, Dependecy Injection 샘플 프로젝트
+- `03_spirng_mvc`: Spring MVC 샘플 프로젝트
+- `04_spring_kotlin`: Spring Kotlin 샘플 프로젝트
+- `05_external_configuration`: Spring 외부 설정 샘플 프로젝트
+- `06_auto_configuration`: Spring Boot Auto Configuration 샘플 프로젝트
+- `07_spring_aop`: Spring AOP 샘플 프로젝트
+- `08_spring_resttemplate` RestTemplate 샘플 프로젝트
+- `09_spring_security`: Spring Security 샘플 프로젝트
+- `10_hibernate`: Hibernate 샘플 프로젝트
+- `11_spring_data_jpa` Spring Data JPA 샘플 프로젝트
+- `12_query_dsl`: Query DSL 샘플 프로젝트
+- `15_spring_redis`: Spring Data Redis 샘플 프로젝트
+- `16_spring_cache`: Spring Local Cache, Global Cache 샘플 프로젝트
+- `17_spring_kafka`: Spring Kafka 샘플 프로젝트
+- `18_spring_mongo`: Spring Mongo 샘플 프로젝트
+- `19_spring_elasticsearch`: Spring Elasticsearch 샘플 프로젝트
+- `20_spring_websocket`: Spring WebSocket 샘플 프로젝트
+- `21_spring_webflux`: Spring WebFlux 샘플 프로젝트
+- `22_spring_batch`: Spring Batch, Spring Quartz 샘플 프로젝트
+- `23_spring_grpc`: Spring gRPC 샘플 프로젝트
+- `24_spring_test`: Spring Test 샘플 프로젝트
+- `25_spring_swagger`: Spring Swagger 샘플 프로젝트
+- `26_spring_docker_kubernetes`: Spring with Docker, Kubernetes 샘플 프로젝트

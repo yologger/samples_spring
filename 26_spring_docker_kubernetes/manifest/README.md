@@ -1,0 +1,1 @@
+# kubernetes-cicd-test-manifest
