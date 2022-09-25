@@ -1,16 +1,18 @@
 package com.yologger.stomp;
 
+import lombok.RequiredArgsConstructor;
 import org.springframework.messaging.handler.annotation.MessageMapping;
-import org.springframework.messaging.handler.annotation.SendTo;
+import org.springframework.messaging.simp.SimpMessageSendingOperations;
 import org.springframework.stereotype.Controller;
-import org.springframework.web.util.HtmlUtils;
 
 @Controller
+@RequiredArgsConstructor
 public class MessageController {
+
+    private final SimpMessageSendingOperations messageSendingOperations;
+
     @MessageMapping("/message")
-    @SendTo("/subscribe/room")
-    public ResponseDTO greeting(RequestDTO message) throws Exception {
-        System.out.println("message: " + message.toString());
-        return new ResponseDTO("echo: " + HtmlUtils.htmlEscape(message.getMessage()));
+    public void message(ChatMessage message) throws Exception {
+        messageSendingOperations.convertAndSend("/subscribe/room/" + message.getRoomId(), message);
     }
 }
