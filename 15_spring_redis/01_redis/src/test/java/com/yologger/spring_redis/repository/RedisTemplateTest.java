@@ -1,6 +1,7 @@
 package com.yologger.spring_redis.repository;
 
-import com.yologger.spring_redis.config.EmbeddedRedisConfig;
+import com.yologger.spring_redis.config.TestRedisConfig;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -12,16 +13,21 @@ import org.springframework.data.redis.core.SetOperations;
 import org.springframework.data.redis.core.ValueOperations;
 
 import java.util.List;
+import java.util.Set;
 
 import static com.google.common.truth.Truth.assertThat;
 
 @DataRedisTest
-@Import({EmbeddedRedisConfig.class})
+@Import({TestRedisConfig.class})
 class RedisTemplateTest {
 
     @Autowired
     RedisTemplate redisTemplate;
 
+    @AfterEach
+    public void tearDown() {
+        redisTemplate.getConnectionFactory().getConnection().flushAll();
+    }
 
     @Test
     @DisplayName("opsForValue() 테스트")

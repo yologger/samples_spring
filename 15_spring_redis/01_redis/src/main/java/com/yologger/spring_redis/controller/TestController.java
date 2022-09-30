@@ -1,4 +1,4 @@
-package com.yologger.spring_redis;
+package com.yologger.spring_redis.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;

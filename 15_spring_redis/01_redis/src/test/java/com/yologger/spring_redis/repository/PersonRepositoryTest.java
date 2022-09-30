@@ -1,6 +1,7 @@
 package com.yologger.spring_redis.repository;
 
-import com.yologger.spring_redis.config.EmbeddedRedisConfig;
+import com.yologger.spring_redis.config.TestRedisConfig;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.DisplayName;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -10,12 +11,17 @@ import org.springframework.context.annotation.Import;
 import static com.google.common.truth.Truth.assertThat;
 
 @DataRedisTest
-@Import({EmbeddedRedisConfig.class})
+@Import({TestRedisConfig.class})
 @DisplayName("PersonRepository 테스트")
 public class PersonRepositoryTest {
 
     @Autowired
     PersonRepository personRepository;
+
+    @AfterEach
+    public void tearDown() {
+        personRepository.deleteAll();
+    }
 
     @Test
     @DisplayName("save() 테스트")
