@@ -1,4 +1,4 @@
-package com.yologger.samples.spring_data_jpa.controller;
+package com.yologger.samples.spring_data_jpa.model;
 
 import lombok.AllArgsConstructor;
 import lombok.Builder;

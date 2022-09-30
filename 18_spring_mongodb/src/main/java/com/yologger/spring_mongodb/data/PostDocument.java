@@ -13,7 +13,7 @@ import org.springframework.data.mongodb.core.mapping.Field;
 public class PostDocument extends BaseDocument {
 
     @Id
-    private ObjectId id;
+    private String id;
 
     @Field
     private String title;

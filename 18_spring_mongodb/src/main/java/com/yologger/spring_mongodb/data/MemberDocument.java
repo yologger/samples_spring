@@ -20,7 +20,7 @@ import java.util.List;
 public class MemberDocument extends BaseDocument {
 
     @Id
-    private ObjectId id;
+    private String id;
 
     @Field
     private String email;

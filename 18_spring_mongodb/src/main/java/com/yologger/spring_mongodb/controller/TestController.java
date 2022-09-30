@@ -1,4 +1,4 @@
-package com.yologger.spring_mongodb;
+package com.yologger.spring_mongodb.controller;
 
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
