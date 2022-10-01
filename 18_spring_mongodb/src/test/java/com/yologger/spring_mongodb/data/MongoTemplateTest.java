@@ -1,18 +1,27 @@
 package com.yologger.spring_mongodb.data;
 
+import com.yologger.spring_mongodb.config.TestMongoConfig;
+import org.junit.jupiter.api.AfterEach;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.boot.autoconfigure.mongo.embedded.EmbeddedMongoAutoConfiguration;
 import org.springframework.boot.test.autoconfigure.data.mongo.DataMongoTest;
+import org.springframework.context.annotation.Import;
 import org.springframework.data.mongodb.core.MongoTemplate;
-import org.springframework.transaction.annotation.Transactional;
 
 import static com.google.common.truth.Truth.assertThat;
 
-@DataMongoTest
+@DataMongoTest(excludeAutoConfiguration = EmbeddedMongoAutoConfiguration.class)
+@Import(TestMongoConfig.class)
 class MongoTemplateTest {
 
     @Autowired
     private MongoTemplate mongoTemplate;
+
+    @AfterEach
+    public void tearDown() {
+        mongoTemplate.dropCollection("post");
+    }
 
     @Test
     public void savePost() {
@@ -26,5 +35,4 @@ class MongoTemplateTest {
 
         assertThat(mongoTemplate.findAll(PostDocument.class, "post").size()).isEqualTo(1);
     }
-
 }
