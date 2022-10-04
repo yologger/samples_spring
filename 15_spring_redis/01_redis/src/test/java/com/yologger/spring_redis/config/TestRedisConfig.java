@@ -27,6 +27,21 @@ public class TestRedisConfig {
     @Value("${spring.redis.port}")
     private int port;
 
+    private RedisServer redisServer;
+
+    @PostConstruct
+    public void redisServer() throws IOException {
+        redisServer = new RedisServer(port);
+        redisServer.start();
+    }
+
+    @PreDestroy
+    public void stopRedis() {
+        if (redisServer != null) {
+            redisServer.stop();
+        }
+    }
+
     @Bean
     public RedisConnectionFactory redisConnectionFactory() {
         return new LettuceConnectionFactory(host, port);
@@ -38,28 +53,8 @@ public class TestRedisConfig {
         redisTemplate.setConnectionFactory(redisConnectionFactory());
         redisTemplate.setKeySerializer(new StringRedisSerializer());
         redisTemplate.setValueSerializer(new Jackson2JsonRedisSerializer(Phone.class));
+        redisTemplate.setHashKeySerializer(new StringRedisSerializer());
+        redisTemplate.setHashValueSerializer(new Jackson2JsonRedisSerializer(Phone.class));
         return redisTemplate;
     }
-
-
-//    @Value("${spring.redis.host}")
-//    private String host;
-//
-//    @Value("${spring.redis.port}")
-//    private int port;
-//
-//    private RedisServer redisServer;
-//
-//    @PostConstruct
-//    public void redisServer() throws IOException {
-//        redisServer = new RedisServer(port);
-//        redisServer.start();
-//    }
-//
-//    @PreDestroy
-//    public void stopRedis() {
-//        if (redisServer != null) {
-//            redisServer.stop();
-//        }
-//    }
 }

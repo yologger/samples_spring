@@ -13,9 +13,6 @@ import java.io.IOException;
 @Profile("local")
 public class EmbeddedRedisConfig {
 
-    @Value("${spring.redis.host}")
-    private String host;
-
     @Value("${spring.redis.port}")
     private int port;
 

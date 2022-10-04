@@ -1,12 +1,8 @@
 package com.yologger.spring_redis.repository;
 
-import java.io.Serializable;
 import java.util.UUID;
 
 public class Phone {
-
-    // private static final long serialVersionUID = -1L;
-
     private String id;
     private String name;
 
@@ -26,6 +22,7 @@ public class Phone {
         this.name = name;
     }
 
+    public Phone() {}
     public Phone(String name) {
         this.id = UUID.randomUUID().toString();
         this.name = name;
