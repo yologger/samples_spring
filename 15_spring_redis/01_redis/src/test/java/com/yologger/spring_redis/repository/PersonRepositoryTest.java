@@ -11,7 +11,7 @@ import org.springframework.context.annotation.Import;
 import static com.google.common.truth.Truth.assertThat;
 
 @DataRedisTest
-@Import({TestRedisConfig.class})
+// @Import({TestRedisConfig.class})
 @DisplayName("PersonRepository 테스트")
 public class PersonRepositoryTest {
 
@@ -20,7 +20,7 @@ public class PersonRepositoryTest {
 
     @AfterEach
     public void tearDown() {
-        personRepository.deleteAll();
+        // personRepository.deleteAll();
     }
 
     @Test
