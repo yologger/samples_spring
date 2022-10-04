@@ -42,7 +42,7 @@ dependencies {
     testImplementation "com.google.truth:truth:1.1.3"
 
     // Embedded Redis
-    implementation "it.ozimov:embedded-redis:0.7.2"
+    implementation 'it.ozimov:embedded-redis:0.7.2'
 }
 
 tasks.named('test') {

@@ -9,9 +9,7 @@ import org.springframework.boot.test.autoconfigure.data.redis.DataRedisTest;
 import org.springframework.context.annotation.Bean;
 import org.springframework.context.annotation.Import;
 import org.springframework.data.redis.core.*;
-import org.springframework.data.redis.serializer.StringRedisSerializer;
 
-import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
 import java.util.Set;
@@ -19,7 +17,7 @@ import java.util.Set;
 import static com.google.common.truth.Truth.assertThat;
 
 @DataRedisTest
-// @Import({TestRedisConfig.class})
+@Import({TestRedisConfig.class})
 class RedisTemplateTest {
 
     @Autowired
@@ -27,7 +25,7 @@ class RedisTemplateTest {
 
     @AfterEach
     public void tearDown() {
-        // redisTemplate.getConnectionFactory().getConnection().flushAll();
+        redisTemplate.getConnectionFactory().getConnection().flushAll();
     }
 
     @Test
