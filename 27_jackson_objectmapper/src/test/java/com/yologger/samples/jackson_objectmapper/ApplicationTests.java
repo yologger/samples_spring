@@ -18,18 +18,9 @@ class ApplicationTests {
     void test() throws JsonProcessingException {
         ObjectMapper objectMapper = new ObjectMapper();
 
-        Person from = new Person("Paul", 34);
-        Car c1 = new Car("S Class", "Benz");
-        Car c2 = new Car("Sonata", "Hyundai");
-        from.addCar(c1);
-        from.addCar(c2);
-        String jsonString = objectMapper.writeValueAsString(from);
-        System.out.println(jsonString);  // {"name":"Paul","age":34,"cars":[{"name":"S Class","manufacturer":"Benz"},{"name":"Sonata","manufacturer":"Hyundai"}]}
 
-        Person to = objectMapper.readValue(jsonString, Person.class);
-
-        for (Car car : to.getCars()) {
-            System.out.println(car.getName());
-        }
+        String jsonString = "{\"id\":\"1\",\"name\":\"Paul\",\"age\":\"1\"}";
+        Person person = objectMapper.readerFor(Person.class).readValue(jsonString);
+        System.out.println(person);
     }
 }
