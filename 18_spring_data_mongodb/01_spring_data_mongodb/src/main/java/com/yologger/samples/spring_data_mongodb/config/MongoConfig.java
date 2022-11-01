@@ -1,4 +1,4 @@
-package com.yologger.spring_mongodb.config;
+package com.yologger.samples.spring_data_mongodb.config;
 
 import com.mongodb.client.MongoClient;
 import com.mongodb.client.MongoClients;
@@ -10,14 +10,19 @@ import de.flapdoodle.embed.mongo.config.Net;
 import de.flapdoodle.embed.mongo.distribution.Version;
 import de.flapdoodle.embed.process.runtime.Network;
 import org.springframework.beans.factory.annotation.Value;
-import org.springframework.boot.test.context.TestConfiguration;
 import org.springframework.context.annotation.Bean;
+import org.springframework.context.annotation.Configuration;
+import org.springframework.data.mongodb.config.EnableMongoAuditing;
+import org.springframework.data.mongodb.repository.config.EnableMongoRepositories;
 
 import javax.annotation.PostConstruct;
 import javax.annotation.PreDestroy;
 import java.io.IOException;
-@TestConfiguration
-public class TestMongoConfig {
+
+@Configuration
+@EnableMongoAuditing
+@EnableMongoRepositories
+public class MongoConfig {
     @Value("${spring.data.mongodb.host}") private String host;
     @Value("${spring.data.mongodb.port}") private int port;
 
@@ -26,7 +31,7 @@ public class TestMongoConfig {
     private MongodExecutable mongodExecutable;
 
     @PostConstruct
-    void startMongo() throws IOException {
+    void startMongod() throws IOException {
         MongodConfig config = MongodConfig.builder()
                 .version(Version.Main.PRODUCTION)
                 .net(new Net(host, port, Network.localhostIsIPv6()))
@@ -37,7 +42,7 @@ public class TestMongoConfig {
     }
 
     @PreDestroy
-    void stopMongo() {
+    void stopMongod() {
         mongodProcess.stop();
         mongodExecutable.stop();
     }

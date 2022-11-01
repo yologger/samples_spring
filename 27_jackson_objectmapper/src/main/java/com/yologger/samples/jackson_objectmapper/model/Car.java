@@ -1,4 +1,4 @@
-package com.yologger.samples.jackson_objectmapper;
+package com.yologger.samples.jackson_objectmapper.model;
 
 public class Car {
     private String name;
